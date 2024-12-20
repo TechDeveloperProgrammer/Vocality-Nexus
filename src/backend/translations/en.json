@@ -1,0 +1,15 @@
+{
+    "welcome_message": "Welcome to Vocality Nexus, {username}!",
+    "voice_transform_success": "Voice transformation completed successfully.",
+    "voice_transform_error": "Error during voice transformation: {error}",
+    "recommendation_generated": "Personalized recommendations generated.",
+    "event_recommendation": "Recommended event: {event_name}",
+    "performance_report": "System performance report generated.",
+    "auth_login_success": "Login successful for {username}.",
+    "auth_login_error": "Login failed: {reason}",
+    "profile_update_success": "Profile updated successfully.",
+    "profile_update_error": "Error updating profile: {error}",
+    "voice_analysis_complete": "Voice analysis completed.",
+    "connection_request_sent": "Connection request sent to {username}.",
+    "connection_request_error": "Error sending connection request: {error}"
+}

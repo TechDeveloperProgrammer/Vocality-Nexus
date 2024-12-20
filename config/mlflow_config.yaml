@@ -1,0 +1,53 @@
+tracking:
+  uri: sqlite:///mlflow.db
+  experiment_name: vocality_nexus_ml_experiments
+
+model_registry:
+  default_artifact_path: ./mlruns
+  model_versions_to_keep: 5
+
+performance_tracking:
+  metrics_to_track:
+    - mse
+    - mae
+    - r2_score
+    - precision
+    - recall
+    - f1_score
+    - inference_time_ms
+
+logging:
+  level: INFO
+  file_path: ./logs/mlflow_tracking.log
+
+artifact_storage:
+  backend: local
+  local_path: ./mlflow_artifacts
+
+model_versioning:
+  auto_version: true
+  version_tag_prefix: "v"
+
+notification:
+  email_alerts:
+    enabled: true
+    recipients:
+      - ml_admin@vocalitynexus.com
+    alert_thresholds:
+      performance_drift: 0.2
+      inference_time_increase: 50  # percent
+
+security:
+  encryption_key_path: ./secrets/mlflow_encryption_key
+  access_control:
+    enabled: true
+    allowed_users:
+      - ml_engineer
+      - data_scientist
+
+deployment:
+  staging_model_tag: "staging"
+  production_model_tag: "production"
+  auto_promote_threshold:
+    performance_improvement: 0.05
+    stability_window: 3  # number of consecutive evaluations

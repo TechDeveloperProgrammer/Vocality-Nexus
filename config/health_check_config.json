@@ -1,0 +1,30 @@
+{
+    "critical_services": [
+        "postgresql",
+        "redis",
+        "nginx",
+        "vocality-backend",
+        "vocality-frontend"
+    ],
+    "resource_thresholds": {
+        "cpu_usage": 80,
+        "memory_usage": 90,
+        "disk_usage": 85,
+        "gpu_memory_usage": 90
+    },
+    "external_service_checks": {
+        "github": "https://github.com",
+        "google": "https://www.google.com",
+        "ai_model_server": "https://models.vocalitynexus.com"
+    },
+    "database_connection_timeout": 5,
+    "network_connectivity_timeout": 3,
+    "logging": {
+        "level": "INFO",
+        "file_path": "/var/log/vocality/health_check.log"
+    },
+    "alert_thresholds": {
+        "consecutive_failures": 3,
+        "alert_email": "admin@vocalitynexus.com"
+    }
+}
